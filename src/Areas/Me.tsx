@@ -6,6 +6,7 @@ import { Environment, OrbitControls } from '@react-three/drei'
 import { Soccer } from '@/Components/Soccer'
 import { DecimalGoldMaterial } from '@/Components/GoldMaterial'
 import { MeStars } from '@/Components/MeStars'
+import { Shoes } from '@/Components/Shoes'
 
 export const Me = () => {
 
@@ -16,6 +17,7 @@ export const Me = () => {
         <Soccer/>
         <DecimalGoldMaterial/>
         <MeStars/>
+        <Shoes></Shoes>
     </div>
     )
 }

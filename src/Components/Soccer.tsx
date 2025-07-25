@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import { Canvas, useLoader } from '@react-three/fiber'
 import { TextureLoader } from 'three'
-import footballtexture from '../../public/assets/textures/football-texture.avif'
+import footballtexture from '../../public/assets/textures/football-texture.jpg'
 import { Environment, OrbitControls } from '@react-three/drei'
 
 
