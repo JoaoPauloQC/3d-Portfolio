@@ -15,15 +15,15 @@ export const Shoes = () =>{
 
         <div className='pt-24 gap-20 home__card  flex items-center'>
                 <div className='Soccer__left home__card__left  rounded-2xl'>    
-                    <Canvas camera={{position: [0,0,4.5],fov: 50}} className='rounded-2xl w-full h-full'>
+                    <Canvas camera={{position: [0,0,0],fov: 10}} className='rounded-2xl w-full h-full'>
                         
                             <Shoe/>
                       
                         <Environment preset={'city'} background blur={1} />
-                        <OrbitControls autoRotate autoRotateSpeed={2} enablePan={false} enableZoom={false} minPolarAngle={Math.PI / 2.1} maxPolarAngle={Math.PI / 2.1} />
+                        <OrbitControls autoRotate autoRotateSpeed={2} enablePan={false} enableZoom={false} minPolarAngle={0} maxPolarAngle={Math.PI} />
                     </Canvas>
                 </div>
-            <div className='Soccer__right '><p className='Montserrat'>Ever since I was a kid I play soccer. It can be with my friends or in my school, whatever I just like playing soccer</p></div>
+            <div className='Soccer__right '><p className='Montserrat'>This is the AirForce from Nike, the shoes I use nowadays.</p></div>
         </div>
 
     )
@@ -38,8 +38,26 @@ export const Shoe = () =>{
     }
     seeing()
     return (
-        <group>
-            <mesh castShadow receiveShadow geometry={nodes.Nike_Air_Force_Left.geometry} material={materials['Flap Material.002']} />
-        </group>
+        <group scale={3}>
+            <primitive object={nodes.Nike_Logo_left004} material={materials['Logo left Material']} />
+            <primitive object={nodes.Nike_Logo_left005} material={materials['Logo left Material']}/>
+            <primitive object={nodes.Nike_Logo_right004} material={materials['Logo right Material']}/>
+            <primitive object={nodes.Nike_Logo_right005} material={materials['Logo right Material']}/>
+            <mesh castShadow receiveShadow geometry={(nodes.Laces005 as THREE.Mesh).geometry} material={materials['Laces Material']} />
+            <mesh castShadow receiveShadow geometry={(nodes.Laces006 as THREE.Mesh).geometry} material={materials['Laces Material']} />
+            <mesh castShadow receiveShadow geometry={(nodes.Plane040 as THREE.Mesh).geometry} material={materials['Main Body Material']} />
+            <mesh castShadow receiveShadow geometry={(nodes.Plane040_1 as THREE.Mesh).geometry} material={materials['Main Body Material']} />
+            <mesh castShadow receiveShadow geometry={(nodes.Plane040_2 as THREE.Mesh).geometry} material={materials['Main Body Material']} />
+            <mesh castShadow receiveShadow geometry={(nodes.Plane040_3 as THREE.Mesh).geometry} material={materials['Main Body Material']} />
+            <mesh castShadow receiveShadow geometry={(nodes.Plane044 as THREE.Mesh).geometry} material={materials['Main Body Material']} />
+            <mesh castShadow receiveShadow geometry={(nodes.Plane044_1 as THREE.Mesh).geometry} material={materials['Main Body Material']} />
+            <mesh castShadow receiveShadow geometry={(nodes.Plane044_2 as THREE.Mesh).geometry} material={materials['Main Body Material']} />
+            <mesh castShadow receiveShadow geometry={(nodes.Plane044_3 as THREE.Mesh).geometry} material={materials['Main Body Material']} />
+            <mesh castShadow receiveShadow geometry={(nodes.Shoe_Flap008 as THREE.Mesh).geometry} material={materials['Main Body Material']} />
+            <mesh castShadow receiveShadow geometry={(nodes.Shoe_Flap009 as THREE.Mesh).geometry} material={materials['Main Body Material']} />
+            <mesh castShadow receiveShadow geometry={(nodes.Shoe_Flap010 as THREE.Mesh).geometry} material={materials['Main Body Material']} />
+            <mesh castShadow receiveShadow geometry={(nodes.Shoe_Flap011 as THREE.Mesh).geometry} material={materials['Main Body Material']} />    
+            
+    </group>
     )
 }
