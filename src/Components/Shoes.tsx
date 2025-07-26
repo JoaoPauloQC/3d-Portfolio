@@ -1,12 +1,13 @@
-import { useGLTF } from "@react-three/drei"
+import { useGLTF, useProgress } from "@react-three/drei"
 import { createRoot } from 'react-dom/client'
 import { Canvas, useFrame, useLoader } from '@react-three/fiber'
 import { TextureLoader } from 'three'
 import footballtexture from '../../public/assets/textures/football-texture.avif'
 import * as THREE from 'three'
 import { Environment, OrbitControls } from '@react-three/drei'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { group } from "console"
+import { div } from "three/src/nodes/TSL.js"
 
 
 export const Shoes = () =>{
@@ -15,7 +16,7 @@ export const Shoes = () =>{
 
         <div className='pt-24 gap-20 home__card  flex items-center'>
                 <div className='Soccer__left home__card__left  rounded-2xl'>    
-                    <Canvas camera={{position: [0,0,0],fov: 10}} className='rounded-2xl w-full h-full'>
+                    <Canvas camera={{position: [0,0,0.8],fov: 50}} className='rounded-2xl w-full h-full'>
                         
                             <Shoe/>
                       
@@ -33,12 +34,24 @@ export const Shoes = () =>{
 export const Shoe = () =>{
     
     const {nodes,materials} = useGLTF('/assets/textures/airforce.glb')
+    const {progress} = useProgress()
+    useEffect(()=> console.log(progress),[progress])
+
+
     function seeing(){
         console.log("Nodes: ",nodes, "\n Materials: ", materials)
     }
     seeing()
     return (
-        <group scale={3}>
+        <>
+        {progress < 100 && 
+            (
+                <div>
+                    <h1 className="text-white text-2xl Poppins">Loading {progress}</h1>
+                </div>
+            )
+        }
+        <group scale={1}>
             <primitive object={nodes.Nike_Logo_left004} material={materials['Logo left Material']} />
             <primitive object={nodes.Nike_Logo_left005} material={materials['Logo left Material']}/>
             <primitive object={nodes.Nike_Logo_right004} material={materials['Logo right Material']}/>
@@ -57,7 +70,8 @@ export const Shoe = () =>{
             <mesh castShadow receiveShadow geometry={(nodes.Shoe_Flap009 as THREE.Mesh).geometry} material={materials['Main Body Material']} />
             <mesh castShadow receiveShadow geometry={(nodes.Shoe_Flap010 as THREE.Mesh).geometry} material={materials['Main Body Material']} />
             <mesh castShadow receiveShadow geometry={(nodes.Shoe_Flap011 as THREE.Mesh).geometry} material={materials['Main Body Material']} />    
-            
+               
     </group>
+    </>
     )
 }
