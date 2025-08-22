@@ -6,7 +6,7 @@ import * as THREE from "three";
 
 export const Stars = () => {
     const ref = useRef<THREE.Points>(null)
-    const [spherespos] = useState<Float32Array>(() => random.inSphere(new Float32Array(5000),{radius: 1.2}))
+    const [spherespos] = useState<Float32Array>(() => random.inSphere(new Float32Array(5000),{radius: 1.2}) as Float32Array)
 
     useFrame((state,delta)=>{
         if(ref.current){
