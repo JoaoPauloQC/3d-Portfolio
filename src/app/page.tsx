@@ -1,4 +1,4 @@
-import { HomeContent } from "@/Contents/HomeContent";
+import { HomeContent } from "@/sections/HomeSection";
 import Image from "next/image";
 import { div } from "three/tsl";
 

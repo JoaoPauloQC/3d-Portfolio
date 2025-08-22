@@ -30,8 +30,10 @@ export default function RootLayout({
       <body
         
       >
+        <div className="relative z-0">
         <Header></Header>
         {children}
+        </div>
       </body>
     </html>
   );
