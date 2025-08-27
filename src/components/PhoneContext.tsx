@@ -1,4 +1,8 @@
-export const PhoneContext = ({children}: {children: React.ReactNode}) =>{
+type Props = {
+    children?: React.ReactNode
+}
+
+export const PhoneContext = ({children}: Props) =>{
 
     return (
 
