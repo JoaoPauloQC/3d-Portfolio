@@ -10,3 +10,10 @@
 .Montserrat{
     font-family: Montserrat;
 }
+
+.rawCentralize{
+    &--x{
+        left: 50%;
+        transform:translateX(-50%)
+    }
+}

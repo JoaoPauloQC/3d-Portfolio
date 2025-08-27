@@ -1,6 +1,8 @@
 .upscale{
-    transition: 0.1s linear;
+    transition: 100ms linear;
+    cursor: pointer;
+    z-index: 1;
     &:hover{
-        transform: scale(1.05);
+        transform: scale(1.08);
     }
 }

@@ -12,11 +12,18 @@
   font-family: Montserrat;
 }
 
+.rawCentralize--x {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .upscale {
-  transition: 0.1s linear;
+  transition: 100ms linear;
+  cursor: pointer;
+  z-index: 1;
 }
 .upscale:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 @keyframes fade-in {
