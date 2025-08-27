@@ -10,11 +10,9 @@ export const BgOnSee = ({children}: Props) =>{
     const construct = (()=>{
         const observer = new IntersectionObserver((e)=>{
             e.forEach(e =>{
-                if(e.isIntersecting){
-                    setIsVisible(true)
-                }
+                setIsVisible(e.isIntersecting)
             })
-        },{threshold:0.7})
+        },{threshold:0.95})
         if(divRef.current){
             observer.observe(divRef.current)
         }
@@ -26,8 +24,8 @@ export const BgOnSee = ({children}: Props) =>{
 
     return (
         <div ref={divRef} className={`relative `}>
-            <div className="absolute inset-0 bg-neutral-900"></div>
-                <div className={`absolute inset-0 bg-neutral-100 ${isVisible? "opacity-100" : "opacity-0"}`}></div>
+            <div className={`absolute inset-0 transition-all duration-500  ${isVisible? "bg-neutral-900" : "bg-neutral-900"}`}></div>
+                <div className={`absolute inset-0 bg-neutral-100 opacity-0`}></div>
                     <div className="relative">
                     {children}
                     </div>

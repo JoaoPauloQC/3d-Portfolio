@@ -1,3 +1,8 @@
+import miniMe from '@/../public/assets/aboutme/miniMe.jpg'
+import { StaticImageData } from 'next/image'
+import { start } from 'repl'
+import me4x4 from '@/../public/assets/aboutme/me4per4.jpg'
+import githubProfile from "@/../public/assets/aboutme/githubProfile.png"
 type navElement = {
 
     name: string,
@@ -46,3 +51,26 @@ export const textsObj = {
     studies : studies,
     history: history
 }
+
+
+type AbtMeCardType = {
+    text: string,
+    img: StaticImageData
+}
+const Start: AbtMeCardType = {
+    text: "This all started with a young child that grew in a world of games and mediafire stuffs",
+    img: miniMe
+}
+const enteringIF: AbtMeCardType = {
+    text: "Then I grow up and with my effort, I passed on Insituto Federal de São Paulo, and started learning programming",
+    img: me4x4
+}
+
+const githubContext: AbtMeCardType = {
+    text: "Then I grow up and with my effort, I passed on Insituto Federal de São Paulo, and started learning programming",
+    img: githubProfile
+}
+
+export const abtmecards: AbtMeCardType[] = [Start,enteringIF,githubContext]
+
+export type {AbtMeCardType}

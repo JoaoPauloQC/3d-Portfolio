@@ -17,3 +17,17 @@
         transform:translateX(-50%)
     }
 }
+
+.scrollbar{
+    &--none{
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    }
+}
+
+.bg{
+    &--black{
+        background-color: #0b0d11;
+    }
+}

@@ -21,7 +21,7 @@ import { Me } from './Me'
 import StarsCanvas from '@/components/Stars'
 import { Loader } from '@/components/Loader'
 import { BgOnSee } from '@/components/BackgroundOnSee'
-import { PhoneContext } from '@/components/PhoneContext'
+import { Phone } from '@/components/PhoneContext'
 
 
 export const HomeContent = () =>{
@@ -38,7 +38,7 @@ export const HomeContent = () =>{
         </div>
       </Loader>
       <BgOnSee>
-        <PhoneContext></PhoneContext>
+        <Phone></Phone>
       </BgOnSee>
       </>
 
